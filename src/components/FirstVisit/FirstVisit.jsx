@@ -1,13 +1,49 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-import { getFirstVisitData } from '../../redux/actions';
+import { getFirstVisitData, commonGateway, commonGatewayRequestDone } from '../../redux/actions';
+import * as URL from "../../utilities/commonUrl";
+import * as commonConstants from '../../utilities/commonConstants';
+
 import '../../common.css';
+
+var RESOURCE = "atom";
+var reducerKeyGet = "FirstVisitGetSuccess";
+var reducerKeyPost = "FirstVisitPostSuccess";
+var ERROR = commonConstants.ERROR_TEXT;
 
 class FirstVisit extends Component {
     componentDidMount() {
         /** Action call to fetch FirstVisit data. */
         this.props.getFirstVisitData();
+
+        /** API call GET. */
+        this.props.commonGateway({
+            url: URL.TEST_GET_URL, method: 'GET',
+            resource: RESOURCE, reducerKey: reducerKeyGet
+        });
+
+        let reqData = JSON.stringify({ title: 'foo', body: 'bar', userId: 1 });
+        let headerData = { "Content-type": "application/json; charset=UTF-8" };
+        /** API call POST. */
+        this.props.commonGateway({
+            url: URL.TEST_POST_URL, method: 'POST', reqData: reqData,
+            header: headerData, resource: RESOURCE, reducerKey: reducerKeyPost
+        });
+    }
+
+    componentDidUpdate(nextProps) {
+        /** Success Handler GET call */
+        if (this.props[reducerKeyGet]) {
+            console.log("CommonGateway is working fine, GET call response is here : ", this.props[reducerKeyGet]);
+            this.props.commonGatewayRequestDone({ reducerKey: reducerKeyGet });
+        }
+
+        /** Success Handler POST call */
+        if (this.props[reducerKeyPost]) {
+            console.log("CommonGateway is working fine, POST call response is here : ", this.props[reducerKeyPost]);
+            this.props.commonGatewayRequestDone({ reducerKey: reducerKeyPost });
+        }
     }
 
     render() {
@@ -57,11 +93,17 @@ class FirstVisit extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
+    let mapState = {
         firstVisitData: state.testReducer.firstVisitData
-    }
+    };
+    mapState[reducerKeyGet] = state.commonReducer[reducerKeyGet];
+    mapState[reducerKeyPost] = state.commonReducer[reducerKeyPost];
+    mapState[ERROR] = state.commonReducer[ERROR];
+    return mapState;
 }
-const mapDispatchToProps = (dispatch) => bindActionCreators({ getFirstVisitData }, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    getFirstVisitData, commonGateway, commonGatewayRequestDone
+}, dispatch);
 
 FirstVisit = connect(mapStateToProps, mapDispatchToProps)(FirstVisit)
 export default FirstVisit;
