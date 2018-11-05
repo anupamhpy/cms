@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FirstVisit, Shop } from './components';
+
+/** Used to hold "this" refrence. */
+let self;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    /** Assigned value of "this" to self. */
+    self = this;
+    this.state = { switch: false }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Reactsdjfdksjfksjkfsjkfsjkfkjdsjkfjksdfkjwkfjsdfjkjfkjdskjfdsjkfsdjkfjk
-          </a>
-        </header>
+        {/* Button to Display/Hide First component */}
+        <button className="displayHideButton" onClick={() => self.setState({ switch: !self.state.switch })}>
+          {self.state.switch && "Hide"}
+          {!self.state.switch && "Display"}
+        </button>
+
+        {/* First Component, displays when switch value is true */}
+        {self.state.switch && <FirstVisit />}
+        {/* Second Component, displays always */}
+        <Shop />
+
       </div>
     );
   }
