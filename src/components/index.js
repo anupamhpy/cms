@@ -2,3 +2,7 @@
 
 export { default as FirstVisit } from './FirstVisit/FirstVisit.jsx';
 export { default as Shop } from './Shop/Shop.jsx';
+export { default as Header } from './Header/Header.jsx';
+export { default as LeftSidebar } from './LeftSidebar/LeftSidebar.jsx';
+export { default as RightSidebar } from './RightSidebar/RightSidebar.jsx';
+export { default as MainContent } from './MainContent/MainContent.jsx';

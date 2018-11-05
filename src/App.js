@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FirstVisit, Shop } from './components';
+import './common.css';
+import './commonPage.css';
 
 /** Used to hold "this" refrence. */
 let self;
