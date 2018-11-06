@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-import { Header, LeftSidebar, RightSidebar, MainContent } from '../index';
+import { Header, LeftSidebar, RightSidebar, MainContent, Footer } from '../index';
 
 class Shop extends Component {
     render() {
         return (
-            <div>
-                <Header />
-                <div class="container" id="page">
-                    <div class="container-inner">
-                        <div class="main" >
-                            <div class="main-inner group">
-                                <MainContent />
-                                <LeftSidebar />
-                                <RightSidebar />
+            <div class="home blog col-3cm full-width header-desktop-sticky header-mobile-sticky unknown chrome hu-smoothscroll">
+                <div id="wrapper">
+                    <Header />
+                    <div class="container" id="page">
+                        <div class="container-inner">
+                            <div class="main" >
+                                <div class="main-inner group">
+                                    <MainContent />
+                                    <LeftSidebar />
+                                    <RightSidebar />
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <Footer />
                 </div>
             </div>
         );
