@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import { Header, LeftSidebar, RightSidebar, MainContent, Footer } from '../index';
 
-class Shop extends Component {
+class MainContainer extends Component {
     render() {
         return (
             <div class="home blog col-3cm full-width header-desktop-sticky header-mobile-sticky unknown chrome hu-smoothscroll">
@@ -32,5 +32,5 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = (dispatch) => bindActionCreators({}, dispatch);
 
-Shop = connect(mapStateToProps, mapDispatchToProps)(Shop)
-export default Shop;
+MainContainer = connect(mapStateToProps, mapDispatchToProps)(MainContainer)
+export default MainContainer;

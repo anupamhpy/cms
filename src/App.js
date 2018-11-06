@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FirstVisit, Shop } from './components';
+import { FirstVisit, MainContainer } from './components';
 import './common.css';
 import './commonPage.css';
 
@@ -16,9 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      // <div className="App">
-        <Shop />
-      // </div>
+        <MainContainer />
     );
   }
 }
