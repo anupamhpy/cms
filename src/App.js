@@ -16,10 +16,10 @@ class App extends Component {
     return (
       <div className="App">
         {/* Button to Display/Hide First component */}
-        <button className="displayHideButton" onClick={() => self.setState({ switch: !self.state.switch })}>
+        {/* <button className="displayHideButton" onClick={() => self.setState({ switch: !self.state.switch })}>
           {self.state.switch && "Hide"}
           {!self.state.switch && "Display"}
-        </button>
+        </button> */}
 
         {/* First Component, displays when switch value is true */}
         {self.state.switch && <FirstVisit />}

@@ -15,7 +15,8 @@ class Shop extends Component {
         const { shopData } = this.props;
         return (
             <div>
-                <h3 style={{"paddingLeft": "85px"}}><strong>Shop : </strong></h3>
+                <h3 style={{"paddingLeft": "85px"}}><strong>Hinddd </strong></h3>
+                <h5 style={{"paddingLeft": "85px"}}><strong>apnak  LLlk </strong></h5>
                 <section className="twxt" style={{ "marginTop": "77px" }}>
                     <div className="container">
                         <section className="image-effect">
