@@ -8,3 +8,5 @@ export { default as RightSidebar } from './RightSidebar/RightSidebar.jsx';
 export { default as MainContent } from './MainContent/MainContent.jsx';
 export { default as Footer } from './Footer/Footer.jsx';
 export { default as Shop } from './Shop/Shop.jsx';
+export { default as Home } from './Home.jsx';
+

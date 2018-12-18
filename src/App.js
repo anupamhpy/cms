@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FirstVisit, Shop } from './components';
+import { FirstVisit, Shop,Home } from './components';
 
 /** Used to hold "this" refrence. */
 let self;
@@ -24,7 +24,7 @@ class App extends Component {
         {/* First Component, displays when switch value is true */}
         {self.state.switch && <FirstVisit />}
         {/* Second Component, displays always */}
-        <Shop />
+        <Home />
 
       </div>
     );
