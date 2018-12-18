@@ -16,7 +16,7 @@ class Shop extends Component {
         return (
             <div>
                 <h3 style={{"paddingLeft": "85px"}}><strong>Hinddd </strong></h3>
-                <h5 style={{"paddingLeft": "85px"}}><strong>apnak  LLlk </strong></h5>
+                <h5 style={{"paddingLeft": "85px"}}><strong>apnak </strong></h5>
                 <section className="twxt" style={{ "marginTop": "77px" }}>
                     <div className="container">
                         <section className="image-effect">

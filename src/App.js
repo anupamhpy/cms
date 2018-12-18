@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { FirstVisit, MainContainer } from './components';
-import './common.css';
-import './commonPage.css';
+import { FirstVisit, Shop } from './components';
 
-import Routes from './utilities/routes';
+/** Used to hold "this" refrence. */
+let self;
 
 class App extends Component {
   constructor(props) {
     super(props);
+    /** Assigned value of "this" to self. */
+    self = this;
+    this.state = { switch: false }
   }
 
   render() {
